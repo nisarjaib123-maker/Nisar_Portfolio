@@ -15,8 +15,8 @@ export class Contact {
 
   // Placeholder for social links, as none were provided except "Linkedin" text
   socials = [
-    { name: 'LinkedIn', icon: 'fa-brands fa-linkedin', link: '#' },
-    { name: 'GitHub', icon: 'fa-brands fa-github', link: '#' }
+    { name: 'LinkedIn', icon: 'fa-brands fa-linkedin', link: '#' }, // User provided email for LinkedIn, keeping as placeholder
+    { name: 'GitHub', icon: 'fa-brands fa-github', link: 'https://github.com/nisarjaib123-maker' }
   ];
 }
 

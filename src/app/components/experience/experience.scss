@@ -94,4 +94,32 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        &::before {
+            left: 10px; // Move line closer to edge
+        }
+
+        .timeline-item {
+            padding-left: 40px; // Reduce indentation
+            margin-bottom: 2rem;
+
+            .timeline-dot {
+                left: 1px; // Align dot with new line position (10px line center - 10px half dot - 4px border? No, dot is 20px width)
+                // Original: line left 20px. dot left 11px. (20 - 11 = 9px diff, roughly centered? 20px width dot has center at 11+10=21. Line at 20. Close enough).
+                // New line left 10px. Dot center should be 10. Dot left = 10 - 10 = 0px.
+                left: 1px; // Visual adjustment
+            }
+
+            .timeline-content {
+                padding: 1.5rem; // Reduce internal padding
+
+                .header {
+                    h3 {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
 }

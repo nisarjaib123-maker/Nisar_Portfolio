@@ -12,7 +12,12 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Keep 280px or lower to 250px to fit small phones
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr; // Stack properly on very small screens
+    }
+
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;

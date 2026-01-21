@@ -69,27 +69,42 @@
     }
 
     @media (max-width: 768px) {
+        padding: 1rem 1.5rem; // Reduce navbar padding on mobile
+
         .nav-links {
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 70px; // Match approximate header height or 80px based on scroll-padding
             left: 0;
-            width: 100%;
+            right: 0;
+            width: 100vw; // Ensure it doesn't exceed viewport
+            height: calc(100vh - 70px);
             flex-direction: column;
             background-color: var(--card-bg);
-            padding: 1rem;
-            gap: 1.5rem;
-            transform: translateY(-200%);
-            /* Hide by default */
-            transition: transform 0.3s ease-in-out;
-            box-shadow: var(--shadow);
+            padding: 2rem;
+            gap: 2rem;
+            transform: translateX(100%);
+            /* Hide by default and remove from layout/paint to prevent scroll */
+            visibility: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.3s;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            justify-content: flex-start;
+            align-items: center;
 
             &.active {
-                transform: translateY(0);
+                transform: translateX(0);
+                visibility: visible;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
+            }
+
+            a {
+                font-size: 1.25rem; // Larger touch targets
             }
         }
 
         .hamburger {
             display: block;
+            z-index: 1001; // Ensure above menu if needed
         }
     }
 }
