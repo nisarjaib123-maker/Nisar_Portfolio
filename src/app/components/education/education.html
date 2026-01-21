@@ -1,0 +1,19 @@
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card" *ngFor="let edu of education">
+            <div class="icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="content">
+                <h3>{{ edu.degree }}</h3>
+                <p class="university">{{ edu.university }}</p>
+                <div class="details">
+                    <span><i class="fa-regular fa-calendar"></i> {{ edu.year }}</span>
+                    <span><i class="fa-solid fa-location-dot"></i> {{ edu.location }}</span>
+                </div>
+                <p class="grade">CGPA: {{ edu.cgpa }}</p>
+            </div>
+        </div>
+    </div>
+</section>

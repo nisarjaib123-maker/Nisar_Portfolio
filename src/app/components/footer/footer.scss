@@ -1,0 +1,29 @@
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-color);
+
+    p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+
+        i {
+            color: #ef4444;
+            /* red-500 */
+            animation: heartbeat 1.5s infinite;
+        }
+    }
+
+    @keyframes heartbeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+}

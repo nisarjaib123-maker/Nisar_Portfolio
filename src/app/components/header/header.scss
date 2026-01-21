@@ -1,0 +1,95 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--card-bg);
+    /* Use card-bg instead of strict glass initially */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        a {
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+
+            &:hover,
+            &.active {
+                color: var(--primary);
+            }
+
+            &.active::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: var(--primary);
+            }
+        }
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        padding: 0.5rem;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background-color: var(--card-bg);
+            padding: 1rem;
+            gap: 1.5rem;
+            transform: translateY(-200%);
+            /* Hide by default */
+            transition: transform 0.3s ease-in-out;
+            box-shadow: var(--shadow);
+
+            &.active {
+                transform: translateY(0);
+            }
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+}

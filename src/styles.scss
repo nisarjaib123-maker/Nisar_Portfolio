@@ -1,0 +1,103 @@
+/* Global Styles & Theme Variables */
+:root {
+    /* Light Theme (Default) */
+    --primary: #4f46e5;
+    /* Indigo-600 */
+    --primary-hover: #4338ca;
+    /* Indigo-700 */
+    --bg-color: #f3f4f6;
+    /* Gray-100 */
+    --card-bg: #ffffff;
+    --text-color: #111827;
+    /* Gray-900 */
+    --text-muted: #6b7280;
+    /* Gray-500 */
+    --border-color: #e5e7eb;
+    /* Gray-200 */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-theme {
+    /* Dark Theme */
+    --primary: #6366f1;
+    /* Indigo-500 */
+    --primary-hover: #818cf8;
+    /* Indigo-400 */
+    --bg-color: #111827;
+    /* Gray-900 */
+    --card-bg: #1f2937;
+    /* Gray-800 */
+    --text-color: #f9fafb;
+    /* Gray-50 */
+    --text-muted: #9ca3af;
+    /* Gray-400 */
+    --border-color: #374151;
+    /* Gray-700 */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Offset for fixed header */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Setup in index.html later */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}

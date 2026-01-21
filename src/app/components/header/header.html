@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <div class="logo">
+        <a routerLink="/">Nisar<span>.</span></a>
+    </div>
+
+    <div class="nav-links" [class.active]="isMenuOpen">
+        <a routerLink="/" fragment="home" [class.active]="activeSection === 'home'" (click)="setActive('home')">Home</a>
+        <a routerLink="/" fragment="about" [class.active]="activeSection === 'about'"
+            (click)="setActive('about')">About</a>
+        <a routerLink="/" fragment="experience" [class.active]="activeSection === 'experience'"
+            (click)="setActive('experience')">Experience</a>
+        <a routerLink="/" fragment="projects" [class.active]="activeSection === 'projects'"
+            (click)="setActive('projects')">Projects</a>
+        <a routerLink="/" fragment="skills" [class.active]="activeSection === 'skills'"
+            (click)="setActive('skills')">Skills</a>
+        <a routerLink="/" fragment="education" [class.active]="activeSection === 'education'"
+            (click)="setActive('education')">Education</a>
+        <a routerLink="/" fragment="contact" [class.active]="activeSection === 'contact'"
+            (click)="setActive('contact')">Contact</a>
+
+        <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle Theme">
+            <i class="fa-solid" [class.fa-moon]="!themeService.isDarkMode()"
+                [class.fa-sun]="themeService.isDarkMode()"></i>
+        </button>
+    </div>
+
+    <div class="hamburger" (click)="toggleMenu()">
+        <i class="fa-solid" [class.fa-bars]="!isMenuOpen" [class.fa-times]="isMenuOpen"></i>
+    </div>
+</nav>
