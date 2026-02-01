@@ -20,7 +20,7 @@ export class Projects {
     {
       title: 'LEX App (Infosys)',
       role: 'Senior System Engineer',
-      duration: 'Ongoing',
+      duration: '07/2024 - 11/2022',
       description: 'Comprehensive educational application for over 300K+ employees. Improved user experience and optimized training session scheduling module.',
       techStack: ['Angular 14', 'TypeScript', 'RxJS', 'Angular Material', 'REST APIs', 'Jasmine']
     },
